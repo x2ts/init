@@ -1,0 +1,15 @@
+{
+  "name": "x2ts-init",
+  "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/x2ts/init.git"
+  },
+  "author": "TingSong-Syu",
+  "license": "BSD",
+  "devDependencies": {
+    "clean-css": "3.4.25",
+    "html-minifier": "3.2.3",
+    "uglify-js": "2.7.4"
+  }
+}

@@ -1,6 +1,18 @@
-composer.phar
+*.log
+_notes
+*.komodoproject
+*.bak
+*.pid
+*.sock
+.project
+.DS_Store
+thumbs.db
+nbproject
+.idea
+rsync.sh
+*.settings
+.settings
+reload.sh
+node_modules
+static/compiled-js
 /vendor/
-
-# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock

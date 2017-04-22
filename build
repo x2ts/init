@@ -1,0 +1,67 @@
+#! /usr/bin/env bash
+
+if [ -z $CDN ]; then
+    CDN=cdn.neoteched.com
+fi
+
+if [ -z $PROJECT ]; then
+    CWD=`pwd`
+    PROJECT=`basename $CWD`
+fi
+
+echo "Installing composer dependency..."
+composer install --no-dev --optimize-autoloader --no-suggest --ignore-platform-reqs
+
+echo "Replacing static resource url..."
+
+files=`grep -lR 'static/' protected/view webroot/html`
+for f in $files; do
+    echo -n "Processing $f..."
+    sed "s/\"\/static\//\"\/\/$CDN\/$PROJECT\/$VERSION\/static\//g" < $f > $f.cdn && mv $f.cdn $f
+    sed "s/\"static\//\"\/\/$CDN\/$PROJECT\/$VERSION\/static\//g" < $f > $f.cdn && mv $f.cdn $f
+    echo "done"
+done
+
+echo "Installing dependency libs..."
+npm install 2>&1
+
+echo "Minifying js/css file..."
+
+echo "Minifying stylesheet with cleancss..."
+find static -name '*.css' -print -exec node_modules/clean-css/bin/cleancss -o {} {} \;
+
+echo "Minifying JavaScript with uglifyjs..."
+find static -name '*.js'  -print -exec node_modules/uglify-js/bin/uglifyjs -c -m -o {} -- {} \;
+
+echo "Minifying html with html-minifier..."
+find webroot -name '*.html' -print \
+    -exec node_modules/html-minifier/cli.js \
+    --html5 --collapse-whitespace --remove-comments -o {}.min {} \; \
+    -exec mv {}.min {} \;
+
+if [ -x `which jpegoptim` ]; then
+    echo "Optimizing JPEG images..."
+    find static -name *.jpg -print -exec jpegoptim -q --strip-all {} \;
+fi
+
+if [ -x `which optipng` ]; then
+    echo "Optimizing PNG images..."
+    find static -name *.png -print -exec optipng -quiet -strip all -o7 {} \;
+fi
+
+echo "Moving static to version dir..."
+mkdir $VERSION
+mv static $VERSION/
+
+echo "Turning off DEBUG mode..."
+patch -p1 < build.tools/turn-off-debug.diff
+if [ -n $BUILDENV ]; then
+    patch -p1 < build.tools/env_$BUILDENV.diff
+fi
+
+echo -n "Cleaning..."
+rm -rf build.tools/ docs/ node_modules/ package.json
+echo "done"
+
+echo "Seems everything goes well. I'm going away..."
+rm -f build

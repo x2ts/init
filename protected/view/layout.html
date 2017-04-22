@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit"><!--通知国产双核浏览器用webkit渲染-->
+    <!-- 禁止了把数字转化为拨号链接 -->
+    <meta name="format-detection" content="telephone=no">
+    <style media="handheld" type="text/css"></style>
+    {clip name="css"}
+    <title>Hello world!</title>
+    <script src="/static/js/common.js"></script>
+    <script>
+    window.$php = {tpl: {exported_vars: $php.tpl.exported_vars}};
+    console.log("大串", $php.tpl["exported_vars"]);
+    </script>
+</head>
+<body>
+{include file="$_content_template"}
+
+{clip name="js"}
+</body>
+</html>

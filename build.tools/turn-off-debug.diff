@@ -1,0 +1,13 @@
+diff --git a/x2ts.php b/x2ts.php
+index 720d02f..0089350 100644
+--- a/x2ts.php
++++ b/x2ts.php
+@@ -8,7 +8,7 @@
+ 
+ define('X_PROJECT_ROOT', __DIR__);
+ define('X_RUNTIME_ROOT', X_PROJECT_ROOT . '/protected/runtime');
+-define('X_DEBUG', true);
++define('X_DEBUG', false);
+ define('X_ENV', 'debug');
+ 
+ require_once X_PROJECT_ROOT . '/vendor/autoload.php';
