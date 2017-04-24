@@ -3,7 +3,8 @@
   "type": "project",
   "require": {
     "x2ts/x2ts": "^2.0",
-    "x2ts/x2ts-session": "^2.0"
+    "x2ts/x2ts-session": "^2.0",
+    "x2ts/model-init": "^1.0"
   },
   "autoload": {
     "psr-0": {
