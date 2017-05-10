@@ -28,7 +28,7 @@ npm install 2>&1
 echo "Minifying js/css file..."
 
 echo "Minifying stylesheet with cleancss..."
-find static -name '*.css' -print -exec node_modules/clean-css/bin/cleancss -o {} {} \;
+find static -name '*.css' -print -exec node_modules/clean-css-cli/bin/cleancss -o {} {} \;
 
 echo "Minifying JavaScript with uglifyjs..."
 find static -name '*.js'  -print -exec node_modules/uglify-js/bin/uglifyjs -c -m -o {} -- {} \;
@@ -41,12 +41,20 @@ find webroot -name '*.html' -print \
 
 if [ -x `which jpegoptim` ]; then
     echo "Optimizing JPEG images..."
-    find static -name *.jpg -print -exec jpegoptim -q --strip-all {} \;
+    if which compress_image 2>/dev/null; then
+        find static -name *.jpg -print -exec compress_image {} \;
+    else
+        find static -name *.jpg -print -exec jpegoptim -q --strip-all {} \;
+    fi
 fi
 
 if [ -x `which optipng` ]; then
     echo "Optimizing PNG images..."
-    find static -name *.png -print -exec optipng -quiet -strip all -o7 {} \;
+    if which compress_image 2>/dev/null; then
+        find static -name *.png -print -exec compress_image {} \;
+    else
+        find static -name *.png -print -exec optipng -quiet -strip all -o7 {} \;
+    fi
 fi
 
 echo "Moving static to version dir..."
