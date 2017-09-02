@@ -13,18 +13,20 @@ use x2ts\route\event\PostRouteEvent;
 use x2ts\Toolkit;
 
 class Setup {
-    public static function setup() {
-        X::bus()->on('x2ts.route.PostRoute', function (PostRouteEvent $ev) {
+    public static function setupTidewaysProfiler(PostRouteEvent $ev) {
+        if (class_exists('Tideways\Profiler')) {
             $action = $ev->action;
-            if (class_exists('Tideways\Profiler')) {
-                $host = $action->header('Host');
-                $subDomain = substr($host, 0, strpos($host, '.'));
-                \Tideways\Profiler::setCustomVariable('subdomain', $subDomain);
-                \Tideways\Profiler::setTransactionName(
-                    get_class($action) . '::' .
-                    Toolkit::toCamelCase('http ' . strtolower($action->server('REQUEST_METHOD')))
-                );
-            }
-        });
+            $host = $action->header('Host');
+            $subDomain = substr($host, 0, strpos($host, '.'));
+            \Tideways\Profiler::setCustomVariable('subdomain', $subDomain);
+            \Tideways\Profiler::setTransactionName(
+                get_class($action) . '::' .
+                Toolkit::toCamelCase('http ' . strtolower($action->server('REQUEST_METHOD')))
+            );
+        }
+    }
+
+    public static function setup() {
+        X::bus()->on(PostRouteEvent::name(), [Setup::class, 'setupTidewaysProfiler']);
     }
 }
