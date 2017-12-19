@@ -136,7 +136,7 @@
             "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/x2ts/model-init.git",
+                "url": "git@git.neoteched.com:x2ts/model-init.git",
                 "reference": "144f718186ab0d5e34b0fbf9d19e76d0be736e19"
             },
             "dist": {
@@ -169,17 +169,17 @@
         },
         {
             "name": "x2ts/x2ts",
-            "version": "v2.2.4",
+            "version": "v2.5.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/x2ts/x2ts.git",
-                "reference": "9f7e32d0da2b52797aaae622628561f8acdd28b8"
+                "url": "git@git.neoteched.com:x2ts/x2ts.git",
+                "reference": "deae6b6786dc3fd4ce4fc0a90d54043a21d0cb3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/x2ts/x2ts/9f7e32d0da2b52797aaae622628561f8acdd28b8.zip",
-                "reference": "9f7e32d0da2b52797aaae622628561f8acdd28b8",
-                "shasum": ""
+                "url": "https://satis.neoteched.com/dist/x2ts/x2ts/x2ts-x2ts-v2.5.3-741c20.zip",
+                "reference": "deae6b6786dc3fd4ce4fc0a90d54043a21d0cb3b",
+                "shasum": "83484c9343cf72167406648f2e8f0555a153c480"
             },
             "require": {
                 "ext-ctype": ">=7.0.0",
@@ -211,7 +211,6 @@
                     ]
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD"
             ],
@@ -222,21 +221,21 @@
                 }
             ],
             "description": "The core of x2ts framework.",
-            "time": "2017-07-07T08:26:01+00:00"
+            "time": "2017-12-06T06:06:44+00:00"
         },
         {
             "name": "x2ts/x2ts-session",
-            "version": "v2.0.7",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/x2ts/x2ts-session.git",
-                "reference": "94a6d5e85e51f093dd0d2ad149cb783ef8b66d2a"
+                "url": "git@git.neoteched.com:x2ts/x2ts-session.git",
+                "reference": "5098732fcc596d3ad368d58df49d0aa2ca62f701"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/x2ts/x2ts-session/94a6d5e85e51f093dd0d2ad149cb783ef8b66d2a.zip",
-                "reference": "94a6d5e85e51f093dd0d2ad149cb783ef8b66d2a",
-                "shasum": ""
+                "url": "https://satis.neoteched.com/dist/x2ts/x2ts-session/x2ts-x2ts-session-v2.1.1-61f42c.zip",
+                "reference": "5098732fcc596d3ad368d58df49d0aa2ca62f701",
+                "shasum": "993d7fbe3cc275fa1fa5ea3812927348a85e083b"
             },
             "require": {
                 "x2ts/x2ts": "^2.0.7"
@@ -254,7 +253,6 @@
                     ]
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD"
             ],
@@ -265,7 +263,7 @@
                 }
             ],
             "description": "The token & session classes for x2ts",
-            "time": "2017-04-25T11:18:53+00:00"
+            "time": "2017-11-09T10:19:38+00:00"
         }
     ],
     "packages-dev": [],
