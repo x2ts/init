@@ -13,8 +13,19 @@ return [
                 'name'     => 'app',
                 'handlers' => [
                     \Monolog\Handler\StreamHandler::class => [
-                        X_RUNTIME_ROOT . '/app.log',
-                        X_LOG_DEBUG,
+                        X_RUNTIME_ROOT . ($_SERVER['HTTP_DEBUG_KEY'] ?? 'app') . '.log',
+                        (X_DEBUG || isset($_SERVER['HTTP_DEBUG_KEY'])) ? X_LOG_DEBUG : X_LOG_NOTICE,
+                    ],
+                    \x2ts\log\AmqpDelegateHandler::class  => [
+                        [
+                            'sock'              => 'unix:///var/run/amqp-delegate.sock',
+                            'connectionTimeout' => 3,
+                            'writeTimeout'      => 10,
+                            'exchange'          => 'log',
+                            'routingKey'        => 'log.' . X_PROJECT . '.{channel}.{level}',
+                        ],
+                        (X_DEBUG || isset($_SERVER['HTTP_DEBUG_KEY'])) ? X_LOG_DEBUG : X_LOG_NOTICE,
+                        X_DEBUG,
                     ],
                 ],
             ],

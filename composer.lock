@@ -169,17 +169,17 @@
         },
         {
             "name": "x2ts/x2ts",
-            "version": "v2.5.3",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
                 "url": "git@git.neoteched.com:x2ts/x2ts.git",
-                "reference": "deae6b6786dc3fd4ce4fc0a90d54043a21d0cb3b"
+                "reference": "1f408aa902737f7062ba158a2fa9bd6ecb204d39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.neoteched.com/dist/x2ts/x2ts/x2ts-x2ts-v2.5.3-741c20.zip",
-                "reference": "deae6b6786dc3fd4ce4fc0a90d54043a21d0cb3b",
-                "shasum": "83484c9343cf72167406648f2e8f0555a153c480"
+                "url": "https://satis.neoteched.com/dist/x2ts/x2ts/x2ts-x2ts-v2.8.0-023f8b.zip",
+                "reference": "1f408aa902737f7062ba158a2fa9bd6ecb204d39",
+                "shasum": "85d598a3fe6bc808e80ee159963ca1650445e81b"
             },
             "require": {
                 "ext-ctype": ">=7.0.0",
@@ -212,7 +212,7 @@
                 }
             },
             "license": [
-                "BSD"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -221,7 +221,7 @@
                 }
             ],
             "description": "The core of x2ts framework.",
-            "time": "2017-12-06T06:06:44+00:00"
+            "time": "2018-01-26T06:46:09+00:00"
         },
         {
             "name": "x2ts/x2ts-session",
