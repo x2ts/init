@@ -16,3 +16,5 @@ reload.sh
 node_modules
 static/compiled-js
 /vendor/
+composer.lock
+
