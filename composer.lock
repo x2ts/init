@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "6f435ed06e5f23fa7b3c919ec8116a29",
@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/Seldaek/monolog/fd8c787753b3a2ad11bc60c063cff1358a32a3b4.zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
                 "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
                 "shasum": ""
             },
@@ -94,7 +94,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/php-fig/log/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d.zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "shasum": ""
             },
@@ -136,12 +136,12 @@
             "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "git@git.neoteched.com:x2ts/model-init.git",
+                "url": "https://github.com/x2ts/model-init.git",
                 "reference": "144f718186ab0d5e34b0fbf9d19e76d0be736e19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/x2ts/model-init/144f718186ab0d5e34b0fbf9d19e76d0be736e19.zip",
+                "url": "https://api.github.com/repos/x2ts/model-init/zipball/144f718186ab0d5e34b0fbf9d19e76d0be736e19",
                 "reference": "144f718186ab0d5e34b0fbf9d19e76d0be736e19",
                 "shasum": ""
             },
@@ -169,17 +169,17 @@
         },
         {
             "name": "x2ts/x2ts",
-            "version": "v2.8.0",
+            "version": "v2.8.1",
             "source": {
                 "type": "git",
-                "url": "git@git.neoteched.com:x2ts/x2ts.git",
-                "reference": "1f408aa902737f7062ba158a2fa9bd6ecb204d39"
+                "url": "https://github.com/x2ts/x2ts.git",
+                "reference": "676fa38341891c21d846af8155707b05cc8510cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.neoteched.com/dist/x2ts/x2ts/x2ts-x2ts-v2.8.0-023f8b.zip",
-                "reference": "1f408aa902737f7062ba158a2fa9bd6ecb204d39",
-                "shasum": "85d598a3fe6bc808e80ee159963ca1650445e81b"
+                "url": "https://api.github.com/repos/x2ts/x2ts/zipball/676fa38341891c21d846af8155707b05cc8510cf",
+                "reference": "676fa38341891c21d846af8155707b05cc8510cf",
+                "shasum": ""
             },
             "require": {
                 "ext-ctype": ">=7.0.0",
@@ -211,6 +211,7 @@
                     ]
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -221,19 +222,19 @@
                 }
             ],
             "description": "The core of x2ts framework.",
-            "time": "2018-01-26T06:46:09+00:00"
+            "time": "2018-03-30T09:57:30+00:00"
         },
         {
             "name": "x2ts/x2ts-session",
             "version": "v2.1.1",
             "source": {
                 "type": "git",
-                "url": "git@git.neoteched.com:x2ts/x2ts-session.git",
+                "url": "https://github.com/x2ts/x2ts-session.git",
                 "reference": "5098732fcc596d3ad368d58df49d0aa2ca62f701"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.neoteched.com/dist/x2ts/x2ts-session/x2ts-x2ts-session-v2.1.1-61f42c.zip",
+                "url": "https://api.github.com/repos/x2ts/x2ts-session/zipball/5098732fcc596d3ad368d58df49d0aa2ca62f701",
                 "reference": "5098732fcc596d3ad368d58df49d0aa2ca62f701",
                 "shasum": "993d7fbe3cc275fa1fa5ea3812927348a85e083b"
             },
